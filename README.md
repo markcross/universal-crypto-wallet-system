@@ -23,14 +23,27 @@ $
 To make sure that you are in the right part of the file system of your newly created ubuntu installation
 type: cd ~
 
-The "~" or tilda symbol is often shifted "#" just to the left of the ENTER/RETURN key
+The "~" or tilda symbol is often shifted "#" just to the left of the ENTER/RETURN key, it takes you to your "home" directory.
+So your home directory structure could look like this.
 
+/home/bob
+/home/bob/Desktop
+/home/bob/Documents
+/home/bob/Downloads
+/home/bob/Pictures
+/home/bob/Video
+
+Entering
+```
 $ cd ~
-
-FOLLOWED BY ENTER/RETURN
-
+```
+FOLLOWED BY ENTER/RETURN - is a shortcut to immediately end up in your home directory.
+If your name with bob, typing cd ~ saves bob from typing
+```
+cd /home/bob
+```
+OK onwards with the installation of the script
 Then copy and past the following:
-
 ```
 $ sudo apt-get update
 $ sudo apt-get install git
@@ -56,7 +69,7 @@ chmod +x install.sh
 Then the TAB key and the **install.sh** will autocomplete with "**./**" infront
 
 ```
-$ ~/cointales-wallets-install$ ./install.sh
+$ ./install.sh
 ```
 
 FOLLOWED BY **ENTER/RETURN** and enjoy.
@@ -67,8 +80,13 @@ And basic documentation of where to execute them from in ~/ucw/docs
 ``` **type**
 cd ~/ucw
 ```
-
 To see the "brief" notes after installation choices look in the "docs" directory for each crypto you have installed.
+
+To update your crypto wallets you can run the script again:
+```
+$ cd ~/universal-crypto-wallet-system
+$ ./install.sh
+```
 
 And please go to http://www.cointales.com/ for the full documentation.
 
