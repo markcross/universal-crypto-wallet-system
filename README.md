@@ -18,7 +18,7 @@ You can do that from the menu or often do CTRL-ALT-T as key combinations
 
 You have a black box with a prompt like this:
 
-username@machinename:~$
+$
 
 To make sure that you are in the right part of the file system of your newly created ubuntu installation
 type: cd ~
@@ -31,10 +31,10 @@ FOLLOWED BY ENTER/RETURN
 
 Then copy and past the following:
 
-username@machinename:~$ sudo apt-get update
-username@machinename:~$ sudo apt-get install git
-username@machinename:~$ git clone https://github.com/markcross/universal-crypto-wallet-system.git
-username@machinename:~$ cd universal-crypto-wallet-system
+$ sudo apt-get update
+$ sudo apt-get install git
+$ git clone https://github.com/markcross/universal-crypto-wallet-system.git
+$ cd universal-crypto-wallet-system
 
 You can often short cut to this directory by just yping at the prompt
 
@@ -52,7 +52,7 @@ chmod +x install.sh
 ./i
 Then the TAB key and the install.sh will autocomplete with "./" infront
 
-username@machinename:~/cointales-wallets-install$ ./install.sh
+$ ~/cointales-wallets-install$ ./install.sh
 
 FOLLOWED BY ENTER/RETURN and enjoy.
 
