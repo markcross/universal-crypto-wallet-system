@@ -31,12 +31,14 @@ FOLLOWED BY ENTER/RETURN
 
 Then copy and past the following:
 
+```
 $ sudo apt-get update
 $ sudo apt-get install git
 $ git clone https://github.com/markcross/universal-crypto-wallet-system.git
 $ cd universal-crypto-wallet-system
+```
 
-You can often short cut to this directory by just yping at the prompt
+You can often short cut to this directory by just typing at the prompt
 
 cd uni 
 
@@ -52,7 +54,9 @@ chmod +x install.sh
 ./i
 Then the TAB key and the install.sh will autocomplete with "./" infront
 
+```
 $ ~/cointales-wallets-install$ ./install.sh
+```
 
 FOLLOWED BY ENTER/RETURN and enjoy.
 
