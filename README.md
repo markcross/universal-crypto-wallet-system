@@ -3,7 +3,7 @@ Universal Crypto Wallet System for deploying many crypto wallets on a Ubuntu 16.
 
 USAGE
 
-The Universal Crypto Wallet System is methodoloy intended to be executed on a Ubuntu 64bit based distribution. It has been tested against Linux Mint XFCE Serena 18.2/18.1 based on Ubuntu 16.04 It allows you select from a variety of cyrptocurrency wallet you may like to install.
+The Universal Crypto Wallet System is methodoloy intended to be executed on a Ubuntu 64bit based distribution. It has been tested against Linux Mint XFCE Serena 18.2/18.1 based on Ubuntu 16.04 It allows you select from a variety of cyrptocurrency wallets you may like to install.
 
 ![First screen on UCW](https://github.com/markcross/universal-crypto-wallet-system/raw/master/images/1%20ucw%20preparation.png)
 ![Main Menu on UCW](https://github.com/markcross/universal-crypto-wallet-system/raw/master/images/2%20uwc%20main%20menu.png)
