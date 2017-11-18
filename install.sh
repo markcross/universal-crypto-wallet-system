@@ -91,7 +91,7 @@ then
 fi
 
 printf "\033c"
-UWCpath=$(dialog --inputbox "Universal Crypto Wallet System installation path, change if you want" 25 75 $HOME/uwc --output-fd 1)
+UWCpath=$(dialog --inputbox "Universal Crypto Wallet System installation path, change if you want" 25 75 $HOME/ucw --output-fd 1)
 
 mkdir -p $UWCpath/docs
 
