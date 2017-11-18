@@ -25,7 +25,7 @@ type: cd ~
 
 The "~" or tilda symbol is often shifted "#" just to the left of the ENTER/RETURN key
 
-username@machinename:~$ cd ~
+$ cd ~
 
 FOLLOWED BY ENTER/RETURN
 
@@ -55,6 +55,9 @@ Then the TAB key and the install.sh will autocomplete with "./" infront
 $ ~/cointales-wallets-install$ ./install.sh
 
 FOLLOWED BY ENTER/RETURN and enjoy.
+
+At the end your crypto wallets are installed in a directory called ~/ucw
+And basic documentation of where to execute them from in ~/ucw/docs
 
 To see the "brief" notes after installation choices look in the "docs" directory for each crypto you have installed.
 
