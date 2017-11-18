@@ -39,29 +39,34 @@ $ cd universal-crypto-wallet-system
 ```
 
 You can often short cut to this directory by just typing at the prompt
-
+```
 cd uni 
-
+```
 Then the TAB key
 
 If there are no other directories starting with uni, the terminal will pre-fill the rest of the directory name for you:
-
+```
 cd universal-crypto-wallet-system
-
+```
 Press return and then type
-
+```
 chmod +x install.sh
 ./i
-Then the TAB key and the install.sh will autocomplete with "./" infront
+```
+Then the TAB key and the **install.sh** will autocomplete with "**./**" infront
 
 ```
 $ ~/cointales-wallets-install$ ./install.sh
 ```
 
-FOLLOWED BY ENTER/RETURN and enjoy.
+FOLLOWED BY **ENTER/RETURN** and enjoy.
 
 At the end your crypto wallets are installed in a directory called ~/ucw
 And basic documentation of where to execute them from in ~/ucw/docs
+
+``` **type**
+cd ~/ucw
+```
 
 To see the "brief" notes after installation choices look in the "docs" directory for each crypto you have installed.
 
