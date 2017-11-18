@@ -1,6 +1,6 @@
 #!/bin/bash
 # install.sh
-# v0.0.2 - Release "Adult Supervision Recommended"
+# v0.0.1 - Release "Adult Supervision Recommended"
 
 # https://github.com/markcross/universal-crypto-wallet-system/
 # Provided under GNU Lesser General Public License - Copyright 2017 Mark Cross, UK callsign M1BXD
