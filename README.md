@@ -46,6 +46,7 @@ OK onwards with the installation of the script
 Then copy and past the following:
 ```
 $ sudo apt-get update
+$ sudo apt-get upgrade -y
 $ sudo apt-get install git
 $ git clone https://github.com/markcross/universal-crypto-wallet-system.git
 $ cd universal-crypto-wallet-system
