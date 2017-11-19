@@ -65,7 +65,7 @@ cd universal-crypto-wallet-system
 Press return and then type
 ```
 chmod +x install.sh
-./i
+./in
 ```
 Then the TAB key and the **install.sh** will autocomplete with "**./**" infront
 
