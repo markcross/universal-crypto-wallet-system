@@ -140,13 +140,15 @@ if [ $choice == 'ARK' ]
 then
 printf "\033c"
 echo "Installing: $choice"
+rm -r $UWCpath/ark-desktop
 git clone https://github.com/ArkEcosystem/ark-desktop.git
 ark=$(cd ark-desktop; git describe --tags `git rev-list --tags --max-count=1`)
 
 # https://github.com/ArkEcosystem/ark-desktop/releases
-wget https://github.com/ArkEcosystem/ark-desktop/releases/download/$ark/ArkClient-Ubuntu-$ark_amd64.deb
+echo "https://github.com/ArkEcosystem/ark-desktop/releases/download/1.4.2/ArkClient-Ubuntu-1.4.2"_"amd64.deb"
+wget https://github.com/ArkEcosystem/ark-desktop/releases/download/$ark/ArkClient"-"Ubuntu"-"$ark"_"amd64.deb
 if [ $? -ne 0 ]; then
-    echo "Binary release $ark for $choice probably not available just yet, sorry"
+    echo "Problem with binary release retrieval for $ark for $choice please raise issue on github THANK YOU"
 	read -p "Press [Enter] to proceed"
 fi
 printf "\033c"
