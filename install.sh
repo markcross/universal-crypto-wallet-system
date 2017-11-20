@@ -188,7 +188,7 @@ echo "Installing: $choice"
 sudo apt-get install python-qt4 python-pip python-setuptools -y
 ##################################################################
 # Prempt "Error: Could not find icons file." for Electrum-BCC    #
-sudo apt-get install python-pyqt5 pyqt5-dev-tools -y
+sudo apt-get install python-pyqt5 pyqt5-dev-tools python-dev -y
 ##################################################################
 
 git clone git://github.com/fyookball/electrum.git
@@ -211,12 +211,26 @@ printf "\033c"
 echo "Installing: $choice"
 git clone https://github.com/spesmilo/electrum.git
 electrum=$(cd electrum; git describe --tags `git rev-list --tags --max-count=1`)
-# Install the Electrum and Electrum-Stratis python dependencies
-sudo apt-get install python-qt4 python-pip python-setuptools -y
+# Install the Electrum family python dependencies
+sudo apt-get install python-qt4 python-pip python-dev python-setuptools -y
 sudo pip3 install https://download.electrum.org/$electrum/Electrum-$electrum.tar.gz
 
 echo "USAGE $choice v$electrum" > BTC-electrum.txt
 echo "$choice is now installed and executable via your Internet menu" >> BTC-electrum.txt
+echo
+
+elif [ $choice == 'Electrum-LTC' ]
+then
+printf "\033c"
+echo "Installing: $choice"
+git clone https://github.com/pooler/electrum-ltc.git
+electrumltc=$(cd electrum-ltc; git describe --tags `git rev-list --tags --max-count=1`)
+# Install the Electrum family python dependencies
+sudo apt-get install python-qt4 python-pip python-dev python-setuptools -y
+sudo pip2 install https://electrum-ltc.org/download/Electrum-LTC-$electrumltc.tar.gz
+
+echo "USAGE $choice v$electrum" > BTC-LTC.txt
+echo 'Electrum-LTC is now installed and executable via your Internet menu or by typing into the terminal "electrum-ltc"' >> BTC-LTC.txt
 echo
 
 elif [ $choice == 'Electrum-Stratis' ]
@@ -225,6 +239,8 @@ printf "\033c"
 echo "Installing: $choice"
 git clone https://github.com/stratisproject/electrum-stratis.git
 electrumstratis=$(cd electrum-stratis; git describe --tags `git rev-list --tags --max-count=1`)
+# Install the Electrum family python dependencies
+sudo apt-get install python-qt4 python-pip python-dev python-setuptools -y
 sudo pip install https://github.com/stratisproject/electrum-stratis/releases/download/$electrumstratis/Electrum-Stratis-$electrumstratis-unix.tar.gz
 echo "USAGE $choice" > stratis-electrum.txt
 echo "$choice is now installed and executable via your Internet menu" >> stratis-electrum.txt
