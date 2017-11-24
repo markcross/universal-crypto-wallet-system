@@ -138,9 +138,9 @@ then
 
 if [ $choice == 'ARK' ]
 then
+sudo rm -r ark-desktop
 printf "\033c"
 echo "Installing: $choice"
-sudo rm -r ark-desktop
 git clone https://github.com/ArkEcosystem/ark-desktop.git
 ark=$(cd ark-desktop; git describe --tags `git rev-list --tags --max-count=1`)
 
@@ -159,9 +159,10 @@ echo
 
 elif [ $choice == 'Byteball' ]
 then
+sudo rm -r byteball
+sudo rm -r $UWCpath/byteball-linux64
 printf "\033c"
 echo "Installing: $choice"
-sudo rm -r byteball
 git clone https://github.com/byteball/byteball.git
 byteball=$(cd byteball; git describe --tags `git rev-list --tags --max-count=1`)
 rm byteball-linux64.zip
@@ -264,11 +265,29 @@ echo "USAGE $choice v$neonwallet" > neon.txt
 echo "$choice is now installed and executable via your Accessories menu"  >> neon.txt
 echo
 
+elif [ $choice == 'Monero-GUI' ]
+then
+sudo rm -r $UWCpath/monero-gui
+printf "\033c"
+echo "Installing: $choice"
+git clone https://github.com/monero-project/monero.git
+monero=$(cd monero; git describe --tags `git rev-list --tags --max-count=1`)
+wget -O monero-gui-linux-x64.tar.bz2 https://downloads.getmonero.org/gui/linux64
+tar -xvjf monero-gui-linux-x64.tar.bz2
+rm monero-gui-linux-x64.tar.bz2
+mv monero-gui-$monero $UWCpath/monero-gui
+sudo mv monero monero-$monero-source
+echo "USAGE $choice $monero" > Monero-GUI.txt
+echo "At the terminal run this by:" >> Monero-GUI.txt
+echo "cd $UWCpath/monero-gui" >> Monero-GUI.txt
+echo "./start-gui.sh" >> Monero-GUI.txt
+echo
+
 elif [ $choice == 'MyEtherWallet-MEW' ]
 then
-printf "\033c"
 mkdir -p $UWCpath/eth/
 cd ~/universal-crypto-wallet-system
+printf "\033c"
 echo "Installing: $choice and Chrome extension"
 sudo apt-get install google-chrome-stable
 git clone https://github.com/kvhnuke/etherwallet.git
@@ -295,8 +314,9 @@ cd ~/universal-crypto-wallet-system
 
 elif [ $choice == 'Utilities' ]
 then
-printf "\033c"
 cd $UWCpath
+printf "\033c"
+
 ##########################################################################################################
 echo "Installing: Mnemonic Code Converter"
 # Mnemonic Code Converter
