@@ -13,17 +13,16 @@ printf "\033c"
 echo "################################################################"
 echo "# Universal Crypto Wallet System by cointales.com              #"
 echo "################################################################"
-echo "# Preparing for installations                                  #"
-echo "################################################################"
-echo "  When uwc prompts you to enter your password                  #"
+echo
+echo "  When ucw prompts you to enter your password                  "
 echo "                Use the one for this username: $USER"
-echo "################################################################"
+echo
 echo " If you get cold feet, READ the install.sh file in a text editor"
-echo " Escape by doing n n n enter y then cancel"
+echo " Escape by doing CTRL-C now"
+echo
 echo "################################################################"
-echo "# To help my enthusiam to maintain it please                   #"
+echo "# To help my enthusiam to maintain this please                 #"
 echo "# consider donating to the following addresses                 #"
-echo "#                                                              #"
 echo "# Ethereum ETH: 0x2e9829483f76B00976Db5215976b677808679634     #"
 echo "################################################################"
 echo 
@@ -31,7 +30,8 @@ echo "Full documenation at http://www.cointales.com/"
 echo "to run installer again type this"
 echo "./install.sh"
 echo 
-echo "################################################################"
+echo "Basic documentation paths explained at the end of the install"
+echo 
 read -p "Enable ufw firewall regardless of current state, please press y or n " -n 1 -r
 echo  
 if [[ $REPLY =~ ^[Yy]$ ]]
@@ -43,24 +43,19 @@ fi
 echo "###"
 echo
 echo "Add PPA for QR code generator"
-echo "Add repro for Google Chrome for MyEtherWallet - MEW"
-
-read -p "Please press y or n " -n 1 -r
-echo    # (optional) move to a new line
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-	qreatorstable=$(apt-cache search qreator)
-	if [ -z "qreatorstable" ]
+qreatorstable=$(apt-cache search qreator)
+if [ -z "qreatorstable" ]
 	then
 	# Add ppa for QR code generator
 	#yes '' | sudo add-apt-repository ppa:qreator-hackers/qreator-stable
 	sudo add-apt-repository ppa:qreator-hackers/qreator-stable -y
 	else
-	  echo "qreator-stable already in apt-cache"
-	fi
-	 
+	echo "qreator-stable already in apt-cache"
+fi
+	echo
+	echo "Add repro for Google Chrome for MyEtherWallet - MEW" 
 	chromerepro=$(apt-cache search google-chrome-stable)
-	if [ -z "chromerepro" ]
+if [ -z "chromerepro" ]
 	then
 	# This makes Google Chrome installable for MyEtherWallet.com IE Lets get Chrome
 	# if you want to add the Chrome extension which you manually install through Chrome
@@ -69,12 +64,11 @@ then
 	wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 	sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 	else
-	  echo "google-chrome-stable already in apt-cache"
-	fi
+	echo "google-chrome-stable already in apt-cache"
 fi
 
 echo "###"
-echo "update,upgrade and install git"
+echo "update & upgrade?"
 echo
 
 read -p "Please press y or n " -n 1 -r
@@ -86,8 +80,6 @@ then
 	 
 	# Bring the system uptodate
 	sudo apt upgrade -y
-
-	sudo apt-get install git
 fi
 
 printf "\033c"
