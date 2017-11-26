@@ -9,6 +9,7 @@ Cryptocurrencies currently supported :
 
 * ARK
 * Byteball
+* Dash
 * Electrum-Bitcoin-Coin-Cash
 * Electrum-Bitcoin-Core
 * Electrum-LTC

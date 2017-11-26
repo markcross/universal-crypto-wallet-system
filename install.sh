@@ -173,11 +173,36 @@ mv byteball-linux64 $UWCpath/.
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-echo "USAGE byteball v$byteball" > byteball.txt
+echo "USAGE $choice v$byteball" > byteball.txt
 echo
 echo "At the terminal run this by:" >> byteball.txt
 echo "cd $UWCpath/byteball-linux64" >> byteball.txt
 echo "./Byteball &" >> byteball.txt
+echo
+
+# UWCpath=$/home/mark/ucw
+
+elif [ $choice == 'Dash' ]
+then
+sudo rm -r $UWCpath/electrum-dash
+printf "\033c"
+echo "Installing: $choice"
+# Install the Electrum python dependencies
+sudo apt-get install python-qt4 pyqt4-dev-tools python-pip python-setuptools python-pyqt5 pyqt5-dev-tools python-dev -y
+pyrcc4 icons.qrc -o gui/qt/icons_rc.py
+git clone https://github.com/dashpay/electrum-dash.git
+electrumdash=$(cd electrum-dash; git describe --tags `git rev-list --tags --max-count=1`)
+wget -O electrum-dash-$electrumdash.tar.gz https://github.com/dashpay/electrum-dash/archive/$electrumdash.tar.gz
+tar -xvf electrum-dash-$electrumdash.tar.gz
+rm electrum-dash-$electrumdash.tar.gz
+mv electrum-dash-$electrumdash $UWCpath/electrum-dash
+mv electrum-dash-$electrumdash electrum-dash-$electrumdash-source
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+echo "USAGE $choice v$electrumdash" > dash.txt
+echo
+echo "At the terminal run this by:" >> dash.txt
+echo "cd $UWCpath/electrum-dash" >> dash.txt
+echo "./electrum &" >> dash.txt
 echo
 
 elif [ $choice == 'Electrum-Bitcoin-Coin-Cash' ]
@@ -186,11 +211,7 @@ printf "\033c"
 
 echo "Installing: $choice"
 # Install the Electrum python dependencies
-sudo apt-get install python-qt4 python-pip python-setuptools -y
-##################################################################
-# Prempt "Error: Could not find icons file." for Electrum-BCC    #
-sudo apt-get install python-pyqt5 pyqt5-dev-tools python-dev -y
-##################################################################
+sudo apt-get install python-qt4 python-pip python-setuptools python-pyqt5 pyqt5-dev-tools python-dev -y
 
 git clone git://github.com/fyookball/electrum.git
 bccelectrumversion=$(cd electrum; git describe --tags `git rev-list --tags --max-count=1`)
