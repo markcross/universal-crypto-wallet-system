@@ -226,7 +226,7 @@ echo "Installing: $choice"
 git clone https://github.com/spesmilo/electrum.git
 electrum=$(cd electrum; git describe --tags `git rev-list --tags --max-count=1`)
 # Install the Electrum family python dependencies
-sudo apt-get install python-qt4 python-pip python-dev python-setuptools -y
+sudo apt-get install python3-setuptools python3-pyqt5 python3-pip -y
 sudo pip3 install https://download.electrum.org/$electrum/Electrum-$electrum.tar.gz
 
 echo "USAGE $choice v$electrum" > BTC-electrum.txt
