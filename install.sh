@@ -404,7 +404,7 @@ echo "or if it doesn't work use this GUI tool to access qrencode" >> qreator.txt
 echo "qtqr" >> qreator.txt
 echo 'qrencode -o "FILENAME.PNG" 300 -s 10 "sdfdsfdsfdsfsddf"' >> qreator.txt
 echo "or" >> qreator.txt
-echo 'qrencode -o -d 300 -s 10 "sdfdsfdsfdsfsddf" | display' >> qreator.txt
+echo 'qrencode -o- -d 300 -s 10 "sdfdsfdsfdsfsddf" | display' >> qreator.txt
 #######################################################################################################
 echo "Installing: lxterminal vim htop firefox zim zint veracrypt"
 #######################################################################################################    
@@ -429,6 +429,8 @@ fi
 else
 	echo cancel selected
 fi
+
+mv $UWCpath/*.txt $UWCpath/docs/.
 
 cd ~/universal-crypto-wallet-system
 mv *.txt $UWCpath/docs/.
