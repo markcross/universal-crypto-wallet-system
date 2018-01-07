@@ -49,9 +49,21 @@ if [ -z "qreatorstable" ]
 	# Add ppa for QR code generator
 	#yes '' | sudo add-apt-repository ppa:qreator-hackers/qreator-stable
 	sudo add-apt-repository ppa:qreator-hackers/qreator-stable -y
-	else
+    else
 	echo "qreator-stable already in apt-cache"
 fi
+
+echo
+echo "Add PPA for veracrypt"
+veracrypt=$(apt-cache search veracrypt)
+if [ -z "qreatorstable" ]
+	then
+	# Add ppa for veracrypt
+	sudo add-apt-repository ppa:unit193/encryption -y
+    else
+	echo "veracrypt ppa already in apt-cache"
+fi
+
 	echo
 	echo "Add repro for Google Chrome for MyEtherWallet - MEW" 
 	chromerepro=$(apt-cache search google-chrome-stable)
@@ -378,9 +390,9 @@ echo "USAGE zbarcam" > zbarcam.txt
 echo "At the terminal run this:" >> zbarcam.txt
 echo "zbarcam" >> zbarcam.txt
 ######################################################################################################
-echo "Installing: qreator - creates QR codes" 
+echo "Installing: qreator qrencode & qtqr GUI - creates QR codes" 
 # qreator - creates QR codes
-sudo apt install qreator python-qrencode -y
+sudo apt install qreator python-qrencode qrencode qtqr imagemagick -y
 # qreator does not display QR code image after Ubuntu 16.04 update/upgrade
 # sudo apt-get remove qreator
 # Then see this bug report
@@ -388,14 +400,18 @@ sudo apt install qreator python-qrencode -y
 echo "USAGE qreator" > qreator.txt
 echo "At the terminal run this:" >> qreator.txt
 echo "qreator" >> qreator.txt
+echo "or if it doesn't work use this GUI tool to access qrencode" >> qreator.txt
+echo "qtqr" >> qreator.txt
+echo 'qrencode -o "FILENAME.PNG" 300 -s 10 "sdfdsfdsfdsfsddf"' >> qreator.txt
+echo "or" >> qreator.txt
+echo 'qrencode -o -d 300 -s 10 "sdfdsfdsfdsfsddf" | display' >> qreator.txt
 #######################################################################################################
-echo "Installing: lxterminal vim htop firefox zim zint"
+echo "Installing: lxterminal vim htop firefox zim zint veracrypt"
 #######################################################################################################    
 echo "USAGE zint -b 20 uses the Code 128" > zint.txt
 echo "zint - Create 2D barcode saves .eps (default .png .svg file)" >> zint.txt
 echo "To list codes available type: zint -t" >> zint.txt
 echo "zint -b 20 --notext -d '!FGas_WHATEVER_df111' " >> zint.txt
-    
 
 # Mop and install THE useful apps, especially vim... :-)
 # I was using something very like vim on a mainframe in 1991...
@@ -406,7 +422,7 @@ echo "zint -b 20 --notext -d '!FGas_WHATEVER_df111' " >> zint.txt
 # Now "zim" is a really cool local wiki tool very useful for development and server hosting notes
 
 cd ~
-sudo apt-get install lxterminal vim htop firefox zim zint -y
+sudo apt-get install lxterminal vim htop firefox zim zint veracrypt -y
 
 fi
 	done
