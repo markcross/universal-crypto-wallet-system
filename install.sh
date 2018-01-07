@@ -48,6 +48,7 @@ if [ -z "qreatorstable" ]
 	then
 	# Add ppa for QR code generator
 	#yes '' | sudo add-apt-repository ppa:qreator-hackers/qreator-stable
+    echo "adding qreator-stable ppa"
 	sudo add-apt-repository ppa:qreator-hackers/qreator-stable -y
     else
 	echo "qreator-stable already in apt-cache"
@@ -56,9 +57,10 @@ fi
 echo
 echo "Add PPA for veracrypt"
 veracrypt=$(apt-cache search veracrypt)
-if [ -z "qreatorstable" ]
+if [ -z "veracrypt" ]
 	then
 	# Add ppa for veracrypt
+    echo "adding veracrypt ppa"
 	sudo add-apt-repository ppa:unit193/encryption -y
     else
 	echo "veracrypt ppa already in apt-cache"
@@ -73,6 +75,7 @@ if [ -z "chromerepro" ]
 	# if you want to add the Chrome extension which you manually install through Chrome
 	# Add the repro to the "apt" sources.list.d as it's own repro file
 	# Add the signing key
+    echo "adding google signing key and chrome deb to sources.list.d"
 	wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 	sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 	else
