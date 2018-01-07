@@ -320,11 +320,13 @@ etherwallet=$(cd etherwallet; git describe --tags `git rev-list --tags --max-cou
 wget https://github.com/kvhnuke/etherwallet/releases/download/$etherwallet/etherwallet"-"$etherwallet.zip
 unzip etherwallet"-"$etherwallet.zip
 
+rm -r $UWCpath/eth/etherwallet
 etherwallet=$(cd etherwallet; git describe --tags `git rev-list --tags --max-count=1`)
 wget https://github.com/kvhnuke/etherwallet/releases/download/$etherwallet/chrome"-"extension"-"$etherwallet.zip
 unzip chrome"-"extension"-"$etherwallet.zip -d mew-chrome-extension-$etherwallet
 
 mv mew-chrome-extension-$etherwallet $UWCpath/eth/.
+cp -r etherwallet"-"$etherwallet $UWCpath/eth/etherwallet
 mv etherwallet"-"$etherwallet $UWCpath/eth/.
 
 #DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -362,6 +364,7 @@ echo "See script for usage"
 # http://www.swansontec.com/bitcoin-dice.html
 wget -O dice2key.zip https://github.com/swansontec/dice2key/archive/master.zip
 unzip -o dice2key.zip
+rm dice2key.zip
  
 echo "USAGE dice2key" > dice2key.txt
 echo >> dice2key.txt
