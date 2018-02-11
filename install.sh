@@ -411,6 +411,16 @@ echo "qtqr" >> qreator.txt
 echo 'qrencode -o "FILENAME.PNG" 300 -s 10 "sdfdsfdsfdsfsddf"' >> qreator.txt
 echo "or" >> qreator.txt
 echo 'qrencode -o- -d 300 -s 10 "sdfdsfdsfdsfsddf" | display' >> qreator.txt
+#
+#
+#Clear history#Just this one liner in command prompt will help.
+#
+#for i in {1..N}; do history -d START_NUM; done
+#
+#Where START_NUM is starting position of entry in history. N is the number of entries you may want to delete.
+#
+#ex: for i in {1..50}; do history -d 1030; done
+#
 #######################################################################################################
 echo "Installing: lxterminal vim htop firefox zim zint veracrypt"
 #######################################################################################################    
